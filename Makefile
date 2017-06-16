@@ -12,7 +12,9 @@ bin:
 
 bin/cursing: src/cursing.c | bin
 	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@ \
-		-lncurses
+		-lncurses \
+		$(shell pkg-config --cflags --libs sdl2) \
+		$(shell pkg-config --cflags --libs sdl2_mixer)
 
 build/%.o: src/%.c | build
 	$(CC) $(CFLAGS) $(LDFLAGS) -c $< -o $@
