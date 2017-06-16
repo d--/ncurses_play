@@ -1,0 +1,3 @@
+# cursing
+
+playing with ncurses
